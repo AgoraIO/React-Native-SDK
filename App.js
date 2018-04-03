@@ -50,7 +50,7 @@ export default class App extends Component {
   
   render() {
     
-    AgoraRtcEngine.createEngine('0c0b4b61adf94de1befd7cdd78a50444');
+    AgoraRtcEngine.createEngine('YOUR APPID');
 
     AgoraRtcEngine.enableVideo();
     AgoraRtcEngine.enableAudio();

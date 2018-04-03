@@ -588,7 +588,6 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 48TB6ZZL5S;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -990,7 +989,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 48TB6ZZL5S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1005,8 +1004,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.reactjs.native.example.RNapi;
 				PRODUCT_NAME = RNapi;
-				PROVISIONING_PROFILE = "cb87e624-3d61-4895-9bcf-da59ccd1192b";
-				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1018,7 +1017,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 48TB6ZZL5S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1033,8 +1032,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.reactjs.native.example.RNapi;
 				PRODUCT_NAME = RNapi;
-				PROVISIONING_PROFILE = "cb87e624-3d61-4895-9bcf-da59ccd1192b";
-				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

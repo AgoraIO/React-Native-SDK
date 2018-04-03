@@ -29,7 +29,7 @@ export default class App extends Component {
 // Agora Action 
   _joinChannel() {
     AgoraRtcEngine.setLocalVideoView(this._localView, AgoraRtcEngine.AgoraVideoRenderModeFit);
-    AgoraRtcEngine.setVideoProfile(AgoraRtcEngine.AgoraVideoProfile120P_3, false);
+    AgoraRtcEngine.setVideoProfile(AgoraRtcEngine.AgoraVideoProfileDEFAULT, false);
     AgoraRtcEngine.startPreview();
     AgoraRtcEngine.joinChannel(null, "1224", "ARCore with RtcEngine", 0);
   }

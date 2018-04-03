@@ -47,62 +47,63 @@ NSDictionary *AgoraAudioRecordingQualityDic = nil;
                              @"AgoraAudioScenarioShowRoom" : @(AgoraAudioScenarioShowRoom)};
   
   AgoraVideoProfileDic = @{ @"AgoraVideoProfileInvalid" : @(AgoraVideoProfileInvalid),
-                            @"AgoraVideoProfileLandscape120P" : @(AgoraVideoProfileLandscape120P),
+                            @"AgoraVideoProfile120P" : @(AgoraVideoProfileLandscape120P),
                             
 #if TARGET_OS_IPHONE
-                            @"AgoraVideoProfileLandscape120P_3" : @(AgoraVideoProfileLandscape120P_3),
-                            @"AgoraVideoProfileLandscape180P" : @(AgoraVideoProfileLandscape180P),
-                            @"AgoraVideoProfileLandscape180P_3" : @(AgoraVideoProfileLandscape180P_3),
-                            @"AgoraVideoProfileLandscape180P_4" : @(AgoraVideoProfileLandscape180P_4),
+                            @"AgoraVideoProfile120P_3" : @(AgoraVideoProfileLandscape120P_3),
+                            @"AgoraVideoProfile180P" : @(AgoraVideoProfileLandscape180P),
+                            @"AgoraVideoProfile180P_3" : @(AgoraVideoProfileLandscape180P_3),
+                            @"AgoraVideoProfile180P_4" : @(AgoraVideoProfileLandscape180P_4),
 #endif
                             
-                            @"AgoraVideoProfileLandscape240P" : @(AgoraVideoProfileLandscape240P),
+                            @"AgoraVideoProfile240P" : @(AgoraVideoProfileLandscape240P),
                             
 #if TARGET_OS_IPHONE
-                            @"AgoraVideoProfileLandscape240P_3" : @(AgoraVideoProfileLandscape240P_3),
-                            @"AgoraVideoProfileLandscape240P_4" : @(AgoraVideoProfileLandscape240P_4),
+                            @"AgoraVideoProfile240P_3" : @(AgoraVideoProfileLandscape240P_3),
+                            @"AgoraVideoProfile240P_4" : @(AgoraVideoProfileLandscape240P_4),
 #endif
                             
 #if TARGET_OS_IPHONE
-                            @"AgoraVideoProfileLandscape360P" : @(AgoraVideoProfileLandscape360P),
+                            @"AgoraVideoProfile360P" : @(AgoraVideoProfileLandscape360P),
 #endif
                             
-                            @"AgoraVideoProfileLandscape360P_3" : @(AgoraVideoProfileLandscape360P_3),
-                            @"AgoraVideoProfileLandscape360P_4" : @(AgoraVideoProfileLandscape360P_4),
-                            @"AgoraVideoProfileLandscape360P_6" : @(AgoraVideoProfileLandscape360P_6),
+                            @"AgoraVideoProfile360P_3" : @(AgoraVideoProfileLandscape360P_3),
+                            @"AgoraVideoProfile360P_4" : @(AgoraVideoProfileLandscape360P_4),
+                            @"AgoraVideoProfile360P_6" : @(AgoraVideoProfileLandscape360P_6),
                             
-                            @"AgoraVideoProfileLandscape360P_7" : @(AgoraVideoProfileLandscape360P_7),
-                            @"AgoraVideoProfileLandscape360P_8" : @(AgoraVideoProfileLandscape360P_8),
-                            @"AgoraVideoProfileLandscape360P_9" : @(AgoraVideoProfileLandscape360P_9),
+                            @"AgoraVideoProfile360P_7" : @(AgoraVideoProfileLandscape360P_7),
+                            @"AgoraVideoProfile360P_8" : @(AgoraVideoProfileLandscape360P_8),
+                            @"AgoraVideoProfile360P_9" : @(AgoraVideoProfileLandscape360P_9),
                             
-                            @"AgoraVideoProfileLandscape360P_10" : @(AgoraVideoProfileLandscape360P_10),
-                            @"AgoraVideoProfileLandscape360P_11" : @(AgoraVideoProfileLandscape360P_11),
-                            @"AgoraVideoProfileLandscape480P" : @(AgoraVideoProfileLandscape480P),
+                            @"AgoraVideoProfile360P_10" : @(AgoraVideoProfileLandscape360P_10),
+                            @"AgoraVideoProfile360P_11" : @(AgoraVideoProfileLandscape360P_11),
+                            @"AgoraVideoProfile480P" : @(AgoraVideoProfileLandscape480P),
                             
 #if TARGET_OS_IPHONE
-                            @"AgoraVideoProfileLandscape480P_3" : @(AgoraVideoProfileLandscape480P_3),
+                            @"AgoraVideoProfile480P_3" : @(AgoraVideoProfileLandscape480P_3),
 #endif
                             
-                            @"AgoraVideoProfileLandscape480P_4" : @(AgoraVideoProfileLandscape480P_4),
-                            @"AgoraVideoProfileLandscape480P_6" : @(AgoraVideoProfileLandscape480P_6),
-                            @"AgoraVideoProfileLandscape480P_8" : @(AgoraVideoProfileLandscape480P_8),
-                            @"AgoraVideoProfileLandscape480P_9" : @(AgoraVideoProfileLandscape480P_9),
-                            @"AgoraVideoProfileLandscape480P_10" : @(AgoraVideoProfileLandscape480P_10),
+                            @"AgoraVideoProfile480P_4" : @(AgoraVideoProfileLandscape480P_4),
+                            @"AgoraVideoProfile480P_6" : @(AgoraVideoProfileLandscape480P_6),
+                            @"AgoraVideoProfile480P_8" : @(AgoraVideoProfileLandscape480P_8),
+                            @"AgoraVideoProfile480P_9" : @(AgoraVideoProfileLandscape480P_9),
+                            @"AgoraVideoProfile480P_10" : @(AgoraVideoProfileLandscape480P_10),
                             
-                            @"AgoraVideoProfileLandscape720P" : @(AgoraVideoProfileLandscape720P),
-                            @"AgoraVideoProfileLandscape720P_3" : @(AgoraVideoProfileLandscape720P_3),
-                            @"AgoraVideoProfileLandscape720P_5" : @(AgoraVideoProfileLandscape720P_5),
-                            @"AgoraVideoProfileLandscape720P_6" : @(AgoraVideoProfileLandscape720P_6),
+                            @"AgoraVideoProfile720P" : @(AgoraVideoProfileLandscape720P),
+                            @"AgoraVideoProfile720P_3" : @(AgoraVideoProfileLandscape720P_3),
+                            @"AgoraVideoProfile720P_5" : @(AgoraVideoProfileLandscape720P_5),
+                            @"AgoraVideoProfile720P_6" : @(AgoraVideoProfileLandscape720P_6),
                             
-                            @"AgoraVideoProfileLandscape1080P" : @(AgoraVideoProfileLandscape1080P),
-                            @"AgoraVideoProfileLandscape1080P_3" : @(AgoraVideoProfileLandscape1080P_3),
-                            @"AgoraVideoProfileLandscape1080P_5" : @(AgoraVideoProfileLandscape1080P_5),
+                            @"AgoraVideoProfile1080P" : @(AgoraVideoProfileLandscape1080P),
+                            @"AgoraVideoProfile1080P_3" : @(AgoraVideoProfileLandscape1080P_3),
+                            @"AgoraVideoProfile1080P_5" : @(AgoraVideoProfileLandscape1080P_5),
                             
-                            @"AgoraVideoProfileLandscape1440P" : @(AgoraVideoProfileLandscape1440P),
-                            @"AgoraVideoProfileLandscape1440P_2" : @(AgoraVideoProfileLandscape1440P_2),
-                            @"AgoraVideoProfileLandscape4K" : @(AgoraVideoProfileLandscape4K),
-                            @"AgoraVideoProfileLandscape4K_3" : @(AgoraVideoProfileLandscape4K_3),
+                            @"AgoraVideoProfile1440P" : @(AgoraVideoProfileLandscape1440P),
+                            @"AgoraVideoProfile1440P_2" : @(AgoraVideoProfileLandscape1440P_2),
+                            @"AgoraVideoProfile4K" : @(AgoraVideoProfileLandscape4K),
+                            @"AgoraVideoProfile4K_3" : @(AgoraVideoProfileLandscape4K_3),
                             
+                            /*
                             @"AgoraVideoProfilePortrait120P" : @(AgoraVideoProfilePortrait120P),
                             
 #if TARGET_OS_IPHONE
@@ -158,6 +159,7 @@ NSDictionary *AgoraAudioRecordingQualityDic = nil;
                             
                             @"AgoraVideoProfilePortrait4K" : @(AgoraVideoProfilePortrait4K),
                             @"AgoraVideoProfilePortrait4K_3" : @(AgoraVideoProfilePortrait4K_3),
+                             */
                             @"AgoraVideoProfileDEFAULT" : @(AgoraVideoProfileLandscape360P)};
   
   

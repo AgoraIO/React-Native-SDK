@@ -51,7 +51,7 @@ npm start
 ## Developer Environment Requirements
 
 ### Android
-* Visual Studio Code/Sublime Text
+* Android Studio 2.0 or above/Visual Studio Code/Sublime Text
 * Real devices (Nexus 5X or other devices)
 * Android simulator is NOT supported
 
@@ -63,7 +63,7 @@ npm start
 ## Connect Us
 
 - You can find full API document at [Document Center](https://docs.agora.io/en/)
-- You can file bugs about this demo at [issue](https://github.com/AgoraIO/Agora-RTC-SDK-for-React-Native/issues)
+- You can file bugs at [issue](https://github.com/AgoraIO/Agora-RTC-SDK-for-React-Native/issues)
 
 ## License
 

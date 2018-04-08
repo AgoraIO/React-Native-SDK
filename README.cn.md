@@ -30,6 +30,15 @@ npm install
 ```
 
 ### Android
+通过启动modules来配置并启动本地服务器
+
+```
+npm start
+```
+
+然后在 [Agora.io SDK](https://www.agora.io/cn/blog/download/) 下载 **视频通话 + 直播 SDK**，解压后将其中的 **libs/agora-rtc-sdk.jar** 复制到本项目的 “android\app\libs” 文件夹下，并将对应平台的so文件复制到本项目的“android\app\src\main\jniLibs”文件夹下。
+
+最后使用 Android Studio 打开 android 项目，连接 Android 测试设备，即可运行项目。
 
 ### iOS
 通过启动modules来配置并启动本地服务器
@@ -45,6 +54,9 @@ npm start
 ## 运行环境
 
 ### Android
+* Android Studio
+* Android 真机设备
+* 不支持模拟器
 
 ### iOS
 * XCode 8.0 +

@@ -22,14 +22,14 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		A76964BB2068D28A00AD7A1A /* AgroaEnumConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = A76964BA2068D28A00AD7A1A /* AgroaEnumConvert.m */; };
-		A7696547206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = A7696546206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.m */; };
-		A7696605206CD23900AD7A1A /* AgoraEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = A7696604206CD23900AD7A1A /* AgoraEnum.m */; };
-		A7AE17B320624CE6002E6DC2 /* AgoraRtcEngineModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AE17B220624CE6002E6DC2 /* AgoraRtcEngineModule.m */; };
+		A767A0FA2074FBEE0070BAFF /* AgoraRtcEngineModule+EnumConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = A767A0EF2074FBED0070BAFF /* AgoraRtcEngineModule+EnumConvert.m */; };
+		A767A0FB2074FBEE0070BAFF /* AgroaEnumConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = A767A0F22074FBED0070BAFF /* AgroaEnumConvert.m */; };
+		A767A0FC2074FBEE0070BAFF /* AgoraViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A767A0F42074FBED0070BAFF /* AgoraViewManager.m */; };
+		A767A0FD2074FBEE0070BAFF /* AgoraEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = A767A0F82074FBEE0070BAFF /* AgoraEnum.m */; };
+		A767A0FE2074FBEE0070BAFF /* AgoraRtcEngineModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A767A0F92074FBEE0070BAFF /* AgoraRtcEngineModule.m */; };
 		A7AE18CF2064BE7C002E6DC2 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AE18A92064BE7C002E6DC2 /* libresolv.tbd */; };
 		A7AE18D12064BE85002E6DC2 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AE18D02064BE85002E6DC2 /* VideoToolbox.framework */; };
 		A7AE18D32064BF13002E6DC2 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AE18D22064BF13002E6DC2 /* AgoraRtcEngineKit.framework */; };
-		A7AE18D62064E6FA002E6DC2 /* AgoraViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AE18D52064E6FA002E6DC2 /* AgoraViewManager.m */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
 
@@ -316,20 +316,20 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		A76964932068BA6600AD7A1A /* AgoraNotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraNotify.h; sourceTree = "<group>"; };
-		A76964B92068D28A00AD7A1A /* AgroaEnumConvert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgroaEnumConvert.h; sourceTree = "<group>"; };
-		A76964BA2068D28A00AD7A1A /* AgroaEnumConvert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgroaEnumConvert.m; sourceTree = "<group>"; };
-		A7696545206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AgoraRtcEngineModule+EnumConvert.h"; sourceTree = "<group>"; };
-		A7696546206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AgoraRtcEngineModule+EnumConvert.m"; sourceTree = "<group>"; };
-		A7696603206CD23900AD7A1A /* AgoraEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraEnum.h; sourceTree = "<group>"; };
-		A7696604206CD23900AD7A1A /* AgoraEnum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraEnum.m; sourceTree = "<group>"; };
-		A7AE17B120624CE6002E6DC2 /* AgoraRtcEngineModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraRtcEngineModule.h; sourceTree = "<group>"; };
-		A7AE17B220624CE6002E6DC2 /* AgoraRtcEngineModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraRtcEngineModule.m; sourceTree = "<group>"; };
+		A767A0EF2074FBED0070BAFF /* AgoraRtcEngineModule+EnumConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AgoraRtcEngineModule+EnumConvert.m"; path = "Agora-SDK-For-React-Native-API/AgoraRtcEngineModule+EnumConvert.m"; sourceTree = "<group>"; };
+		A767A0F02074FBED0070BAFF /* AgroaEnumConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgroaEnumConvert.h; path = "Agora-SDK-For-React-Native-API/AgroaEnumConvert.h"; sourceTree = "<group>"; };
+		A767A0F12074FBED0070BAFF /* AgoraRtcEngineModule+EnumConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AgoraRtcEngineModule+EnumConvert.h"; path = "Agora-SDK-For-React-Native-API/AgoraRtcEngineModule+EnumConvert.h"; sourceTree = "<group>"; };
+		A767A0F22074FBED0070BAFF /* AgroaEnumConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgroaEnumConvert.m; path = "Agora-SDK-For-React-Native-API/AgroaEnumConvert.m"; sourceTree = "<group>"; };
+		A767A0F32074FBED0070BAFF /* AgoraNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgoraNotify.h; path = "Agora-SDK-For-React-Native-API/AgoraNotify.h"; sourceTree = "<group>"; };
+		A767A0F42074FBED0070BAFF /* AgoraViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgoraViewManager.m; path = "Agora-SDK-For-React-Native-API/AgoraViewManager.m"; sourceTree = "<group>"; };
+		A767A0F52074FBEE0070BAFF /* AgoraViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgoraViewManager.h; path = "Agora-SDK-For-React-Native-API/AgoraViewManager.h"; sourceTree = "<group>"; };
+		A767A0F62074FBEE0070BAFF /* AgoraEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgoraEnum.h; path = "Agora-SDK-For-React-Native-API/AgoraEnum.h"; sourceTree = "<group>"; };
+		A767A0F72074FBEE0070BAFF /* AgoraRtcEngineModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AgoraRtcEngineModule.h; path = "Agora-SDK-For-React-Native-API/AgoraRtcEngineModule.h"; sourceTree = "<group>"; };
+		A767A0F82074FBEE0070BAFF /* AgoraEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgoraEnum.m; path = "Agora-SDK-For-React-Native-API/AgoraEnum.m"; sourceTree = "<group>"; };
+		A767A0F92074FBEE0070BAFF /* AgoraRtcEngineModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AgoraRtcEngineModule.m; path = "Agora-SDK-For-React-Native-API/AgoraRtcEngineModule.m"; sourceTree = "<group>"; };
 		A7AE18A92064BE7C002E6DC2 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		A7AE18D02064BE85002E6DC2 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		A7AE18D22064BF13002E6DC2 /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcEngineKit.framework; path = RNapi/AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
-		A7AE18D42064E6F9002E6DC2 /* AgoraViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraViewManager.h; sourceTree = "<group>"; };
-		A7AE18D52064E6FA002E6DC2 /* AgoraViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraViewManager.m; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -428,17 +428,17 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				A76964932068BA6600AD7A1A /* AgoraNotify.h */,
-				A7696603206CD23900AD7A1A /* AgoraEnum.h */,
-				A7696604206CD23900AD7A1A /* AgoraEnum.m */,
-				A76964B92068D28A00AD7A1A /* AgroaEnumConvert.h */,
-				A76964BA2068D28A00AD7A1A /* AgroaEnumConvert.m */,
-				A7AE17B120624CE6002E6DC2 /* AgoraRtcEngineModule.h */,
-				A7AE17B220624CE6002E6DC2 /* AgoraRtcEngineModule.m */,
-				A7696545206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.h */,
-				A7696546206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.m */,
-				A7AE18D42064E6F9002E6DC2 /* AgoraViewManager.h */,
-				A7AE18D52064E6FA002E6DC2 /* AgoraViewManager.m */,
+				A767A0F32074FBED0070BAFF /* AgoraNotify.h */,
+				A767A0F62074FBEE0070BAFF /* AgoraEnum.h */,
+				A767A0F82074FBEE0070BAFF /* AgoraEnum.m */,
+				A767A0F72074FBEE0070BAFF /* AgoraRtcEngineModule.h */,
+				A767A0F92074FBEE0070BAFF /* AgoraRtcEngineModule.m */,
+				A767A0F12074FBED0070BAFF /* AgoraRtcEngineModule+EnumConvert.h */,
+				A767A0EF2074FBED0070BAFF /* AgoraRtcEngineModule+EnumConvert.m */,
+				A767A0F52074FBEE0070BAFF /* AgoraViewManager.h */,
+				A767A0F42074FBED0070BAFF /* AgoraViewManager.m */,
+				A767A0F02074FBED0070BAFF /* AgroaEnumConvert.h */,
+				A767A0F22074FBED0070BAFF /* AgroaEnumConvert.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -588,6 +588,7 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 48TB6ZZL5S;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -957,11 +958,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				A7696605206CD23900AD7A1A /* AgoraEnum.m in Sources */,
-				A7696547206BA33B00AD7A1A /* AgoraRtcEngineModule+EnumConvert.m in Sources */,
-				A7AE18D62064E6FA002E6DC2 /* AgoraViewManager.m in Sources */,
-				A76964BB2068D28A00AD7A1A /* AgroaEnumConvert.m in Sources */,
-				A7AE17B320624CE6002E6DC2 /* AgoraRtcEngineModule.m in Sources */,
+				A767A0FA2074FBEE0070BAFF /* AgoraRtcEngineModule+EnumConvert.m in Sources */,
+				A767A0FD2074FBEE0070BAFF /* AgoraEnum.m in Sources */,
+				A767A0FE2074FBEE0070BAFF /* AgoraRtcEngineModule.m in Sources */,
+				A767A0FB2074FBEE0070BAFF /* AgroaEnumConvert.m in Sources */,
+				A767A0FC2074FBEE0070BAFF /* AgoraViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -989,7 +990,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1004,8 +1005,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.reactjs.native.example.RNapi;
 				PRODUCT_NAME = RNapi;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "cb87e624-3d61-4895-9bcf-da59ccd1192b";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1017,7 +1019,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1032,8 +1034,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.reactjs.native.example.RNapi;
 				PRODUCT_NAME = RNapi;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "cb87e624-3d61-4895-9bcf-da59ccd1192b";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -31,7 +31,7 @@ export default class App extends Component {
     AgoraRtcEngine.setLocalVideoView(this._localView, AgoraRtcEngine.AgoraVideoRenderModeFit);
     AgoraRtcEngine.setVideoProfile(AgoraRtcEngine.AgoraVideoProfileDEFAULT, false);
     AgoraRtcEngine.startPreview();
-    AgoraRtcEngine.joinChannel(null, "1224", "ARCore with RtcEngine", 0);
+    AgoraRtcEngine.joinChannel(null, "rnchannel01", "React Native for Agora RTC SDK", 0);
   }
   
   _leaveChannel() {
@@ -50,7 +50,7 @@ export default class App extends Component {
   
   render() {
     
-    AgoraRtcEngine.createEngine('YOUR APPID');
+    AgoraRtcEngine.createEngine('YOUR APP ID');
 
     AgoraRtcEngine.enableVideo();
     AgoraRtcEngine.enableAudio();
@@ -93,7 +93,7 @@ export default class App extends Component {
           />
           <Button
             onPress={this._switchAudio.bind(this)}
-            title="AudioRoute Changed"
+            title="Switch Audio Route"
             color="#841584"
           />
       </View>

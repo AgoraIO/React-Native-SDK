@@ -1,63 +1,58 @@
 # Agora-RTC-SDK-for-React-Native
 
-*其他语言版本： [简体中文](README.cn.md)*
+*Other languages: [简体中文](README.cn.md)*
 
-The Agora-RTC-SDK-for-React-Native Sample App is an open-source demo that will help you get 1 to 1 video chat integrated directly into your iOS/Android applications using **the React Native Api Of Agora Video SDK**.
+The Agora-RTC-SDK-for-React-Native is an open-source wrapper for **[React Native](https://facebook.github.io/react-native/)** developers
 
-With this sample app, you can:
+This repository contains wrapper SDK and sample app, with this sample app, you can:
 
 - Join / leave channel
-- Switch Camera
-- Switch speaker
+- Switch camera
+- Switch audio route
 
 ## Running the App
 First, create a developer account at [Agora.io](https://dashboard.agora.io/signin/), and obtain an App ID. Update "App.js" with your App ID.
 
 ```
-AgoraRtcEngine.createEngine('YOUR APPID');
+AgoraRtcEngine.createEngine('YOUR APP ID');
 ```
 
-And Install Node in Terminal
+Assuming that you have [Node](https://nodejs.org/en/download/) installed, you can use `npm` in command line.
 
-```
-brew install node
-```
-
-Install node_modules
-
+Install modules related to project:
 ```
 npm install
 ```
 
 ### Android
 
-Start modules to configurate and lanuch a local server 
+Next, download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/en/download/). Unzip the downloaded SDK package and copy ***.jar** under **libs** to **android\app\libs** , **arm64-v8a**/**x86**/**armeabi-v7a** under **libs** to **android\app\src\main\jniLibs**.
+
+Finally, Open the Android project, connect to your Android device, and run the project.
+
+Start a development server before you run this project
 
 ```
 npm start
 ```
-
-Next, download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/en/blog/download/). Unzip the downloaded SDK package and copy the **libs/agora-rtc-sdk.jar** to the "android\app\libs" folder in project, then copy the corresponding platform's so file to the project's "android\app\src\main\jniLibs" folder。
-
-Finally, Open the android project, connect to your Android device, and run the project.
 
 ### iOS
 
-Start modules to configurate and lanuch a local server 
+Next, download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/en/download/). Unzip the downloaded SDK package and copy the **AograRtcEngineKit.framework** under **libs** to **ios/RNapi** folder in project.
+
+Finally, Open RNapi.xcodeproj, connect your iPhone／iPad device, setup your development signing and run.
+
+Start a development server before you run this project
 
 ```
 npm start
 ```
-
-Next, download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/en/blog/download/). Unzip the downloaded SDK package and copy the **libs/AograRtcEngineKit.framework** to the "ios/RNapi/" folder in project.
-
-Finally, Open RNapi.xcodeproj, connect your iPhone／iPad device, setup your development signing and run.
 
 ## Developer Environment Requirements
 
 ### Android
-* Android Studio
-* Real devices (Android)
+* Visual Studio Code/Sublime Text
+* Real devices (Nexus 5X or other devices)
 * Android simulator is NOT supported
 
 ### iOS
@@ -68,7 +63,7 @@ Finally, Open RNapi.xcodeproj, connect your iPhone／iPad device, setup your dev
 ## Connect Us
 
 - You can find full API document at [Document Center](https://docs.agora.io/en/)
-- You can file bugs about this demo at [issue](https://github.com/AgoraIO/OpenLive-Voice-Only-iOS/issues)
+- You can file bugs about this demo at [issue](https://github.com/AgoraIO/Agora-RTC-SDK-for-React-Native/issues)
 
 ## License
 

@@ -2,7 +2,7 @@
 
 *其他语言版本： [简体中文](README.cn.md)*
 
-The Agora-RTC-SDK-for-React-Native Sample App is an open-source demo that will help you get 1 to 1 video chat integrated directly into your iOS applications using **the React Native Api Of Agora Video SDK**.
+The Agora-RTC-SDK-for-React-Native Sample App is an open-source demo that will help you get 1 to 1 video chat integrated directly into your iOS/Android applications using **the React Native Api Of Agora Video SDK**.
 
 With this sample app, you can:
 

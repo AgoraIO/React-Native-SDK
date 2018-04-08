@@ -31,6 +31,15 @@ npm install
 
 ### Android
 
+Start modules to configurate and lanuch a local server 
+
+```
+npm start
+```
+
+Next, download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/en/blog/download/). Unzip the downloaded SDK package and copy the **libs/agora-rtc-sdk.jar** to the "android\app\libs" folder in project, then copy the corresponding platform's so file to the project's "android\app\src\main\jniLibs" folder。
+
+Finally, Open the android project, connect to your Android device, and run the project.
 
 ### iOS
 
@@ -47,6 +56,9 @@ Finally, Open RNapi.xcodeproj, connect your iPhone／iPad device, setup your dev
 ## Developer Environment Requirements
 
 ### Android
+* Android Studio
+* Real devices (Android)
+* Android simulator is NOT supported
 
 ### iOS
 * XCode 8.0 +

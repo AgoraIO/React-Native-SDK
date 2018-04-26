@@ -63,7 +63,11 @@ npm start
 ## Connect Us
 
 - You can find full API document at [Document Center](https://docs.agora.io/en/)
-- You can file bugs at [issue](https://github.com/AgoraIO/Agora-RTC-SDK-for-React-Native/issues)
+
+## Contributions Welcome
+- [React Native APIs](apis.md)
+- [File an issue](https://github.com/AgoraIO/Agora-RTC-SDK-for-React-Native/issues)
+- [Contribute code](contribuitions.md)
 
 ## License
 

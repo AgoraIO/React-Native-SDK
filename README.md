@@ -1,4 +1,4 @@
-# Agora-RTC-SDK-for-React-Native
+# Agora-RTC-SDK-for-React-Native-Beta
 
 *Other languages: [简体中文](README.cn.md)*
 

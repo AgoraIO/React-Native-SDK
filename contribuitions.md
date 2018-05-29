@@ -1,18 +1,42 @@
-# Contribute your code
+# Contribute to the Agora React Native Wrapper
 
-## Source code structures:
+This tutorial enables you to generate project files for Android and iOS, enabling you to contribute your own code to the Agora React Native wrapper for [Android](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_android_audio?platform=Android) / [iOS](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_ios_audio?platform=iOS).
 
-1. **[React Native](apis.md)**: React Native APIs for developers.
-2. **sdk**: React Native APIs which wraps functionalities of Agora RTC SDK for Android/iOS.
+## Prerequisites
+- Agora.io Developer Account
+- Node.js 6.9.1+
+- Android development
+	- Code Editor such as Android Studio 2.0+, Visual Studio Code, Sublime Text
+	- Physical Android device (Android Simulator is not supported)
+- iOS development
+	- Xcode 8.0+
+	- Physical iPhone or iPad device (iOS Simulator is not supported)
 
-## Generate Project
 
-#### 1.Android
+## Quick Start
 
-Init a project `react-native init RNProject` on Terminal, and run it `react-native run-android`
+1. Open the Terminal app and run the `init` command to generate the project files.
 
-#### 2. iOS
+	```
+	react-native init RNProject
+	```
 
-Init a project `react-native init RNProject` on Terminal, and run it `react-native run-ios`
+2. Create the Agora React Native wrapper for Android or iOS.
 
-## Enjoy real-time world
+	**Android**
+
+	```
+	react-native run-android
+	```
+	**iOS**
+
+	```
+	react-native run-ios
+	```
+
+3. See [Agora React Native API](apis.md) for information on how to apply the available API functionality.
+
+## Resources:
+
+* Agora RTC API for [Android](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_android_audio?platform=Android) / [iOS](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_ios_audio?platform=iOS).
+* Complete API documentation is available at the [Document Center](https://docs.agora.io/en/).

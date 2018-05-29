@@ -3,7 +3,7 @@
 
 This tutorial enables you to quickly get started with using a sample app to develop requests to the Agora RTC SDK through the [React Native](https://facebook.github.io/react-native/) wrapper for [Android](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_android_audio?platform=Android) / [iOS](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_ios_audio?platform=iOS).
 
-This sample app demonstrates how to:
+This sample app demonstrates the basic Agora SDK features:
 
 - [Render the View](#render-the-view)
 - [Join a Channel](#join-a-channel)
@@ -321,7 +321,7 @@ You can refer to the [React Native API doc](apis.md) to learn more about Agora e
 * [Agora React Native API Reference](apis.md).
 * Complete API documentation is available at the [Document Center](https://docs.agora.io/en/).
 * You can file bugs about this sample [here](https://github.com/AgoraIO/Agora-RTC-SDK-for-React-Native/issues).
-* Learn how to [contribute code](contribuitions.md) to the sample project.
+* Learn how to [contribute code](contributions.md) to the sample project.
 
 ## License
 This software is under the MIT License (MIT). [View the license](LICENSE.md).

@@ -52,26 +52,25 @@ This section shows you how to prepare and build the Agora React Native wrapper f
 
     **Android**
 
-    1. Download the [Agora Video SDK](https://www.agora.io/en/download/).
+    Download the [Agora Video SDK](https://www.agora.io/en/download/).
 
-        2. Un-compress the downloaded SDK package and copy:
+    Un-compress the downloaded SDK package and copy the `libs/agora-rtc-sdk.jar` file into the `android/app/libs` folder.
 
-        - The `libs/agora-rtc-sdk.jar` file into the `android/app/libs` folder.
-        - The `libs/arm64-v8a/x86/armeabi-v7a` folder into the `android/app/src/main/jniLibs` folder.
+    Then copy the `libs/arm64-v8a/x86/armeabi-v7a` folder into the `android/app/src/main/jniLibs` folder.
 
-    3. In Android Studio, open the `android` project folder and connect the Android device.
+    In Android Studio, open the `android` project folder and connect the Android device.
 
-    4. Sync and run the project.
+    Sync and run the project.
 
     **iOS**
 
-    1. Download the [Agora Video SDK](https://www.agora.io/en/download/).
+    Download the [Agora Video SDK](https://www.agora.io/en/download/).
 
-        2. Un-compress the downloaded SDK package and copy the `libs/AograRtcEngineKit.framework` file into the `ios/RNapi` folder.
+    Un-compress the downloaded SDK package and copy the `libs/AograRtcEngineKit.framework` file into the `ios/RNapi` folder.
 
-    3. Open `RNapi.xcodeproj` and connect your iPhone/iPad device.
+    Open `RNapi.xcodeproj` and connect your iPhone/iPad device.
 
-    4. Apply a valid provisioning profile and run the project.
+    Apply a valid provisioning profile and run the project.
 
 
 ## Steps to Create the Sample

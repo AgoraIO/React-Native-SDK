@@ -16,13 +16,13 @@ This tutorial demonstrates these basic Agora SDK features:
 - Agora.io Developer Account
 - Node.js 6.9.1+
 - For Android development:
-  - Android Studio 2.0+,
-  - A code editor such as Visual Studio Code, Sublime Text
+  - Android Studio 2.0+
+  - A code editor such as Visual Studio Code or Sublime Text
   - Physical Android device (Android Simulator is not supported)
 
 - For iOS development:
   - Xcode 8.0+
-  - Physical iPhone or iPad device (iOS Simulator is not supported)
+  - A physical iPhone or iPad device (iOS Simulator is not supported)
 
 ## Quick Start
 This section shows you how to prepare and build the Agora React Native wrapper for the sample app.
@@ -148,7 +148,7 @@ To learn more, see the [React Native API doc](apis.md).
 
 #### Create the View
 
-The `return` method displays the view for the sample app. The `AgoraRendererView` elements are the UI elements Agora uses to display the audio/video. The sample app creates two `AgoraRendererView ` elements, the `_localView` and `_remoteView`.
+The `return()` method displays the view for the sample app. The `AgoraRendererView` elements are the UI elements Agora uses to display the audio/video. The sample app creates two `AgoraRendererView ` elements, the `_localView` and `_remoteView`.
 
 ``` JavaScript  
     return (

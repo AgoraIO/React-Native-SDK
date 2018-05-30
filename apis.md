@@ -2,10 +2,9 @@
 
 The [`AgoraRtcEngineModule.js `](components/AgoraRtcEngineModule.js) file enables use of the JavaScript Agora SDK API through the `AgoraRtcEngine` class. `AgoraRtcEngine` contains the event emitter, which allows the `client` to listen for events.
 
-The [`AgoraRendererView.js`](components/AgoraRendererView.js) file renders the video stream. 
+The [`AgoraRendererView.js`](components/AgoraRendererView.js) file renders the video stream.
 
-You must include **both** JavaScript files in your project. 
-
+You must include **both** JavaScript files in your project.
 
 ## Quick Start
 
@@ -15,10 +14,10 @@ In the `render()` method in your React Native `App.js` file, add `AgoraRtcEngine
 
 ``` JavaScript
 render() {
-		
-	AgoraRtcEngine.createEngine('YOUR APP ID');
-		
-	...
+
+    AgoraRtcEngine.createEngine('YOUR APP ID');
+
+    ...
 }
 ```
 
@@ -46,12 +45,12 @@ Method|Description
 `complain(callId description:(NSString*) description`|Submits a complaint about a call.
 `renewToken(token)`|Renews a token.
 `destroy()`|Destroys the call.
-`setEncryptionSecret(secret)`|Sets the encryption to secret / not secret. 
+`setEncryptionSecret(secret)`|Sets the encryption to secret/not secret.
 `setEncryptionMode(mode)`|Sets the encryption mode.
 `getCallId(callID)`|Retrieves the call ID.
 `getSdkVersion(sdkVersion)`|Retrieves the Agora SDK version.
 `RCTBlcok`|Retrieves a RTC block value.
-	
+
 ### Logging and Testing Methods
 
 These methods are used to set logging preferences and to test call connectivity.
@@ -78,9 +77,9 @@ Method|Description
 `isCameraTorchSupported(isSupported)`|Checks if camera torch (lighting) is supported.
 `setCameraTorchOn(isOn)`|Turns on/off the camera torch (lighting).
 `isCameraAutoFocusFaceModeSupported(isSupported)`|Checks if the facing camera's auto-focus is supported.
-`setCameraAutoFocusFaceModeEnabled(enable)`|Enables / disables the facing camera's auto-focus.
+`setCameraAutoFocusFaceModeEnabled(enable)`|Enables/disables the facing camera's auto-focus.
 `isSpeakerphoneEnabled(isSupported)`|Checks if the speakerphone is enabled.
-`setEnableSpeakerphone(isSpeaker)`|Enables / disables the speakerphone.
+`setEnableSpeakerphone(isSpeaker)`|Enables/disables the speakerphone.
 `setDefaultAudioRouteToSpeakerphone(defaultToSpeaker)`|Sets the speakerphone as the default audio device.
 
 ### View, Preview, and Render Methods
@@ -98,7 +97,7 @@ Method|Description
 
 ### Client, Channel, and Stream Methods
 
-These methods manage the client, channel. and streams.
+These methods manage the client, channel, and streams.
 
 Method|Description
 ----- | -----
@@ -119,9 +118,9 @@ Method|Description
 `enableAudio()`|Enables audio.
 `disableAudio()`|Disables audio.
 `setAudioProfile(profile, scenario)`| Sets the audio profile.
-`muteLocalAudioStream(muted)`|Mutes / unmutes the local audio stream.
-`muteAllRemoteAudioStreams(muted)`|Mutes / unmutes all the remote audio streams.
-`muteRemoteAudioStream(uid, muted)`|Mutes / unmutes the audio stream for a user.
+`muteLocalAudioStream(muted)`|Mutes/unmutes the local audio stream.
+`muteAllRemoteAudioStreams(muted)`|Mutes/unmutes all the remote audio streams.
+`muteRemoteAudioStream(uid, muted)`|Mutes/unmutes the audio stream for a user.
 
 ### Audio Effect Methods
 
@@ -159,7 +158,7 @@ Method|Description
 `setAudioMixingPosition(pos)`|Set the position of the audio mix.
 `getAudioMixingDuration(duration)`|Retrieves the audio mix duration.
 `getAudioMixingCurrentPosition(currentPosition)`|Retrieves the current position of the audio mix.
-`setInEarMonitoringVolume(volume)`|Sets the volume of the in ear audio.
+`setInEarMonitoringVolume(volume)`|Sets the volume of the in-ear audio.
 
 ### Audio Recording and Playback Methods
 
@@ -184,7 +183,7 @@ Method|Description
 `muteLocalVideoStream(muted)`|Mutes the local video stream.
 `muteAllRemoteVideoStreams(mute)`|Mutes all remote video streams.
 `muteRemoteVideoStream(uid, mute)`|Mutes the remote video stream for a user.
-`setVideoQualityParameters(enabled)`|Enables ability to set video quality parameters. 
+`setVideoQualityParameters(enabled)`|Enables ability to set video quality parameters.
 `setLocalVideoMirrorMode(mode)`|Sets the mirror mode of the local video.
 
 ## Event Listeners
@@ -198,7 +197,7 @@ Method|Description
 
 ### General Event Listeners
 
-These are general listeners to check for errors, call quality, and client changes.
+These are general listeners to check for errors, call quality and client changes.
 
 Listener Name|Callback Parameters|Description
 ----- | ----- | -----
@@ -217,7 +216,7 @@ These event listeners detect changes to the channel or connection.
 Listener Name|Callback Parameters|Description
 ----- | ----- | -----
 `LocalDidJoinedChannel `|`uid `, `elapsed`|Triggers when a user joins the local channel.
-`CurrentDidRejoinChannel`|`channel`, `uid`, `elapsed`|Triggers when a user rejoins the channel. 
+`CurrentDidRejoinChannel`|`channel`, `uid`, `elapsed`|Triggers when a user rejoins the channel.
 `RemoteDidJoinedChannel`|`uid`, `elapsed`|Triggers when a remote user joins the channel.
 `RemoteDidOfflineOfUid`|`uid`, `reasonCode`|Triggers when the remote user goes offline.
 `ConnectionDidInterrupted`|`nil`|Triggers when a connection is interrupted.
@@ -257,14 +256,14 @@ These event listeners detect changes to user information.
 Listener Name|Callback Parameters|Description
 ----- | ----- | -----
 `DidAudioMuted`|`uid`, `isMuted`|Triggers when the user mutes/unmutes audio.
-`DidVideoMuted`|`uid`, `isMuted`|Triggers when the user mutes/unmutes video. 
+`DidVideoMuted`|`uid`, `isMuted`|Triggers when the user mutes/unmutes video.
 `DidVideoEnabled`|`uid`, `isMuted`|Triggers when the user enables/disables video.
 `AudioQuality`|`uid`, `quality`, `delay`, `lost`| Triggers when the user's audio quality changes, is delayed, or is lost.
 `NetworkQuality`|`uid`, `txQuality`, `rxQuality`| Triggers when the user's network quality changes.
 `ReceiveStreamMessageFromUid`|`uid`, `streamId`, `message`| Triggers when receiving a stream message from a user.
 `DidOccurStreamMessageErrorFromUid`|`uid`, `streamId`, `error`, `missed`, `cached`| Triggers when a stream message error from a user occurs.
 `ActiveSpeaker`|`speakerUid`|Triggers when the active speaker changes.
-`FirstRemoteAudioFrame`|`uid`, `elapsed`|Triggers when the first remote audio from for the user elapses. 
+`FirstRemoteAudioFrame`|`uid`, `elapsed`|Triggers when the first remote audio from for the user elapses.
 
 ### Statistic Event Listeners
 

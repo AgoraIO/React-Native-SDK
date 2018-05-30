@@ -5,12 +5,14 @@ This tutorial enables you to generate project files for Android and iOS, enablin
 ## Prerequisites
 - Agora.io Developer Account
 - Node.js 6.9.1+
-- Android development
-	- Code Editor such as Android Studio 2.0+, Visual Studio Code, Sublime Text
-	- Physical Android device (Android Simulator is not supported)
-- iOS development
-	- Xcode 8.0+
-	- Physical iPhone or iPad device (iOS Simulator is not supported)
+- For Android development:
+  - Android Studio 2.0+
+  - A code editor such as Visual Studio Code or Sublime Text
+  - Physical Android device (Android Simulator is not supported)
+
+- For iOS development:
+  - Xcode 8.0+
+  - A physical iPhone or iPad device (iOS Simulator is not supported)
 
 
 ## Quick Start
@@ -24,17 +26,16 @@ This tutorial enables you to generate project files for Android and iOS, enablin
 2. Create the Agora React Native wrapper for Android or iOS.
 
 	**Android**
-
 	```
 	react-native run-android
 	```
-	**iOS**
 
+	**iOS**
 	```
 	react-native run-ios
 	```
 
-3. See [Agora React Native API](apis.md) for information on how to apply the available API functionality.
+For information on how to apply the available API functionality, see [Agora React Native API](apis.md) .
 
 ## Resources:
 

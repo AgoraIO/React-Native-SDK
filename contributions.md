@@ -7,7 +7,7 @@ This tutorial enables you to generate project files for Android and iOS, enablin
 - Node.js 6.9.1+
 - For Android development:
   - Android Studio 2.0+
-  - A code editor such as Visual Studio Code or Sublime Text
+  - A code editor such as Sublime Text
   - Physical Android device (Android Simulator is not supported)
 
 - For iOS development:

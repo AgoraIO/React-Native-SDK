@@ -68,13 +68,8 @@ import static io.agora.rtc.Constants.RENDER_MODE_HIDDEN;
 import static io.agora.rtc.Constants.VIDEO_MIRROR_MODE_AUTO;
 import static io.agora.rtc.Constants.VIDEO_MIRROR_MODE_DISABLED;
 import static io.agora.rtc.Constants.VIDEO_MIRROR_MODE_ENABLED;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_1080P;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_1080P_3;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_1080P_5;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_120P;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_120P_3;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_1440P;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_1440P_2;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_180P;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_180P_3;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_180P_4;
@@ -97,8 +92,6 @@ import static io.agora.rtc.Constants.VIDEO_PROFILE_480P_4;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_480P_6;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_480P_8;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_480P_9;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_4K;
-import static io.agora.rtc.Constants.VIDEO_PROFILE_4K_3;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_720P;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_720P_3;
 import static io.agora.rtc.Constants.VIDEO_PROFILE_720P_5;
@@ -276,13 +269,6 @@ public class AgoraModule extends ReactContextBaseJavaModule {
         constants.put(AGORA_VIDEO_PROFILE_720P_3, VIDEO_PROFILE_720P_3);
         constants.put(AGORA_VIDEO_PROFILE_720P_5, VIDEO_PROFILE_720P_5);
         constants.put(AGORA_VIDEO_PROFILE_720P_6, VIDEO_PROFILE_720P_6);
-        constants.put(AGORA_VIDEO_PROFILE_1080P, VIDEO_PROFILE_1080P);
-        constants.put(AGORA_VIDEO_PROFILE_1080P_3, VIDEO_PROFILE_1080P_3);
-        constants.put(AGORA_VIDEO_PROFILE_1080P_5, VIDEO_PROFILE_1080P_5);
-        constants.put(AGORA_VIDEO_PROFILE_1440P, VIDEO_PROFILE_1440P);
-        constants.put(AGORA_VIDEO_PROFILE_1440P_2, VIDEO_PROFILE_1440P_2);
-        constants.put(AGORA_VIDEO_PROFILE_4K, VIDEO_PROFILE_4K);
-        constants.put(AGORA_VIDEO_PROFILE_4K_3, VIDEO_PROFILE_4K_3);
         constants.put(AGORA_VIDEO_PROFILE_DEFAULT, VIDEO_PROFILE_DEFAULT);
 
         constants.put(AGORA_VIDEO_STREAM_TYPE_HIGH, VIDEO_STREAM_HIGH);
@@ -764,32 +750,6 @@ public class AgoraModule extends ReactContextBaseJavaModule {
             }
 
             @Override
-            public void publishingRequestReceived(int uid) {
-                WritableMap map = Arguments.createMap();
-                map.putInt("uid", uid);
-                mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("publishingRequestReceived", map);
-            }
-
-            @Override
-            public void publishingRequestAnswered(int ownerUid, boolean accepted, int error) {
-                WritableMap map = Arguments.createMap();
-                map.putInt("ownerUid", ownerUid);
-                map.putBoolean("accepted", accepted);
-                map.putInt("error", error);
-                mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("publishingRequestAnswered", map);
-            }
-
-            @Override
-            public void unpublishingRequestReceived(int ownerUid) {
-                WritableMap map = Arguments.createMap();
-                map.putInt("ownerUid", ownerUid);
-                mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("unpublishingRequestReceived", map);
-            }
-
-            @Override
             public void onStreamInjectedStatus(String url, int uid, int status) {
                 WritableMap map = Arguments.createMap();
                 map.putString("url", url);
@@ -1126,8 +1086,8 @@ public class AgoraModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void playEffect(int soundId, String pszFilePath, boolean loop, double pitch, double pan, double gain) {
-        mRtcEngine.getAudioEffectManager().playEffect(soundId, pszFilePath, loop, pitch, pan, gain);
+    public void playEffect(int soundId, String filePath, int loopCount, double pitch, double pan, double gain, boolean publish) {
+        mRtcEngine.getAudioEffectManager().playEffect(soundId, filePath, loopCount, pitch, pan, gain, publish);
     }
 
     @ReactMethod

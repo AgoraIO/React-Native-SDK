@@ -282,9 +282,9 @@ RCT_EXPORT_METHOD(playEffect: (int) soundId
                   loop: (BOOL) loop
                   pitch: (double) pitch
                   pan: (double) pan
-                  gain: (double) gain) {
-  
-  [self.agoraKit playEffect:soundId filePath:filePath loop:loop pitch:pitch pan:pan gain:gain];
+                  gain: (double) gain
+                  publish: (BOOL)publish) {
+  [self.agoraKit playEffect:soundId filePath:filePath loopCount:loop pitch:pitch pan:pan gain:gain publish:publish];
 }
 
 RCT_EXPORT_METHOD(stopEffect:(int) soundId) {

@@ -94,7 +94,7 @@ NSDictionary *AgoraAudioRecordingQualityDic = nil;
                             @"AgoraVideoProfile720P_5" : @(AgoraVideoProfileLandscape720P_5),
                             @"AgoraVideoProfile720P_6" : @(AgoraVideoProfileLandscape720P_6),
                             
-                            @"AgoraVideoProfile1080P" : @(AgoraVideoProfileLandscape1080P),
+                            /*
                             @"AgoraVideoProfile1080P_3" : @(AgoraVideoProfileLandscape1080P_3),
                             @"AgoraVideoProfile1080P_5" : @(AgoraVideoProfileLandscape1080P_5),
                             
@@ -103,7 +103,7 @@ NSDictionary *AgoraAudioRecordingQualityDic = nil;
                             @"AgoraVideoProfile4K" : @(AgoraVideoProfileLandscape4K),
                             @"AgoraVideoProfile4K_3" : @(AgoraVideoProfileLandscape4K_3),
                             
-                            /*
+                            
                             @"AgoraVideoProfilePortrait120P" : @(AgoraVideoProfilePortrait120P),
                             
 #if TARGET_OS_IPHONE

@@ -20,6 +20,7 @@
 
 @interface AgoraRtcEngineModule () <AgoraRtcEngineDelegate>
 @property (strong, nonatomic) AgoraRtcEngineKit *agoraKit;
+@property (nonatomic) BOOL hasListeners;
 @end
 
 @implementation AgoraRtcEngineModule{
@@ -674,6 +675,29 @@ RCT_EXPORT_METHOD(getSdkVersion:(RCTResponseSenderBlock)block) {
 
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didClientRoleChanged:(AgoraClientRole)oldRole newRole:(AgoraClientRole)newRole {
   [self sendEventWithName:DidClientRoleChanged body:@{@"oldRole": @(oldRole), @"newRole": @(newRole)}];
+}
+
+#pragma mark - RCTEventEmitter Overrides
+
+- (void)startObserving
+{
+  [super startObserving];
+  self.hasListeners = YES;
+}
+
+- (void)stopObserving
+{
+  [super stopObserving];
+  self.hasListeners = NO;
+}
+
+- (void)sendEventWithName:(NSString *)eventName body:(id)body
+{
+  // Only send events when there are listeners to avoid spammy YellowBox warnings.
+  // See explanation at https://facebook.github.io/react-native/docs/native-modules-ios#optimizing-for-zero-listeners
+  if (self.hasListeners) {
+    [super sendEventWithName:eventName body:body];
+  }
 }
 
 @end

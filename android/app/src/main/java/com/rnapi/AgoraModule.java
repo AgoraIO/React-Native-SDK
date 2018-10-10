@@ -913,11 +913,6 @@ public class AgoraModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void setSpeakerphoneVolume(int volume) {
-        mRtcEngine.setSpeakerphoneVolume(volume);
-    }
-
-    @ReactMethod
     public void enableAudioVolumeIndication(int interval, int smooth) {
         mRtcEngine.enableAudioVolumeIndication(interval, smooth);
     }
@@ -1025,11 +1020,6 @@ public class AgoraModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void disableLastmileTest() {
         mRtcEngine.disableLastmileTest();
-    }
-
-    @ReactMethod
-    public void monitorConnectionEvent(boolean monitor) {
-        mRtcEngine.monitorConnectionEvent(monitor);
     }
 
     @ReactMethod

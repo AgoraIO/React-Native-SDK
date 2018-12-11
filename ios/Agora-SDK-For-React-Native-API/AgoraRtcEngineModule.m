@@ -531,7 +531,7 @@ RCT_EXPORT_METHOD(removePublishStreamUrl:(NSString *)url) {
   [self.agoraKit removePublishStreamUrl:url];
 }
 
-RCT_EXPORT_METHOD(setLiveTranscodingWidth:(NSDictionary *)transcoding) {
+RCT_EXPORT_METHOD(setLiveTranscoding:(NSDictionary *)transcoding) {
   CGSize size = [RCTConvert CGSize:transcoding[@"size"]];
   NSInteger videoBitrate = [RCTConvert NSInteger:transcoding[@"videoBitrate"]];
   NSInteger videoFramerate = [RCTConvert NSInteger:transcoding[@"videoFramerate"]];

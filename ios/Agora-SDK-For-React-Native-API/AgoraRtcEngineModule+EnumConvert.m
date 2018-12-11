@@ -29,6 +29,10 @@ static NSMutableDictionary *AgoraTotalDic = nil;
   [AgoraTotalDic addEntriesFromDictionary:AgoraAudioEqualizationBandFrequencyDic];
   [AgoraTotalDic addEntriesFromDictionary:AgoraAudioReverbTypeDic];
   [AgoraTotalDic addEntriesFromDictionary:AgoraAudioRecordingQualityDic];
+  
+  [AgoraTotalDic addEntriesFromDictionary:AgoraClientRoleDic];
+  [AgoraTotalDic addEntriesFromDictionary:AgoraAudioSessionOperationRestrictionDic];
+  [AgoraTotalDic addEntriesFromDictionary:AgoraStreamFallbackOptionsDic];
 }
 
 - (NSDictionary *)constantsToExport {

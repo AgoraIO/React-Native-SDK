@@ -18,6 +18,9 @@ extern NSDictionary *AgoraVideoMirrorModeDic;
 extern NSDictionary *AgoraAudioEqualizationBandFrequencyDic;
 extern NSDictionary *AgoraAudioReverbTypeDic;
 extern NSDictionary *AgoraAudioRecordingQualityDic;
+extern NSDictionary *AgoraClientRoleDic;
+extern NSDictionary *AgoraAudioSessionOperationRestrictionDic;
+extern NSDictionary *AgoraStreamFallbackOptionsDic;
 
 @interface AgoraEnum : NSObject
 + (void)loadEnums;

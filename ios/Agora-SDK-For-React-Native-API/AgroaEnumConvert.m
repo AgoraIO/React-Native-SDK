@@ -95,6 +95,30 @@ RCT_ENUM_CONVERTER(AgoraAudioRecordingQuality, AgoraAudioRecordingQualityDic,
 };
 @end
 
+@implementation RCTConvert (AgoraClientRole)
+RCT_ENUM_CONVERTER(AgoraClientRole, AgoraClientRoleDic,
+                   AgoraClientRoleAudience, integerValue)
+- (NSDictionary *)constantsToExport {
+  return AgoraClientRoleDic;
+};
+@end
+
+@implementation RCTConvert (AgoraAudioSessionOperationRestriction)
+RCT_ENUM_CONVERTER(AgoraAudioSessionOperationRestriction, AgoraAudioSessionOperationRestrictionDic,
+                   AgoraAudioSessionOperationRestrictionNone, integerValue)
+- (NSDictionary *)constantsToExport {
+  return AgoraAudioSessionOperationRestrictionDic;
+};
+@end
+
+@implementation RCTConvert (AgoraStreamFallbackOptions)
+RCT_ENUM_CONVERTER(AgoraStreamFallbackOptions, AgoraStreamFallbackOptionsDic,
+                   AgoraStreamFallbackOptionDisabled, integerValue)
+- (NSDictionary *)constantsToExport {
+  return AgoraStreamFallbackOptionsDic;
+};
+@end
+
 //AgoraAudioEqualizationBandFrequencyDic
 #pragma mark - <LoadDictionary>
 @implementation RCTConvert (LoadDictionary)

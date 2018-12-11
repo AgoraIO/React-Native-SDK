@@ -62,4 +62,16 @@ static NSString *const FirstLocalAudioFrame = @"FirstLocalAudioFrame";
 static NSString *const FirstRemoteAudioFrame = @"FirstRemoteAudioFrame";
 static NSString *const DidClientRoleChanged = @"DidClientRoleChanged";
 
+static NSString *const DidMicrophoneEnabled = @"DidMicrophoneEnabled";
+static NSString *const DidLocalVideoEnabled = @"DidLocalVideoEnabled";
+static NSString *const RemoteVideoStateChanged = @"RemoteVideoStateChanged";
+static NSString *const DidLocalPublishFallbackToAudioOnly = @"DidLocalPublishFallbackToAudioOnly";
+static NSString *const DidRemoteSubscribeFallbackToAudioOnly = @"DidRemoteSubscribeFallbackToAudioOnly";
+static NSString *const AudioTransportStats = @"AudioTransportStats";
+static NSString *const VideoTransportStats = @"VideoTransportStats";
+static NSString *const StreamPublished = @"StreamPublished";
+static NSString *const StreamUnpublished = @"StreamUnpublished";
+static NSString *const TranscodingUpdated = @"TranscodingUpdated";
+static NSString *const EngineDidLoaded = @"EngineDidLoaded";
+static NSString *const EngineDidStartCall = @"EngineDidStartCall";
 #endif /* AgoraNotify_h */

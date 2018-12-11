@@ -19,6 +19,9 @@ NSDictionary *AgoraVideoMirrorModeDic = nil;
 NSDictionary *AgoraAudioEqualizationBandFrequencyDic = nil;
 NSDictionary *AgoraAudioReverbTypeDic = nil;
 NSDictionary *AgoraAudioRecordingQualityDic = nil;
+NSDictionary *AgoraClientRoleDic = nil;
+NSDictionary *AgoraAudioSessionOperationRestrictionDic = nil;
+NSDictionary *AgoraStreamFallbackOptionsDic = nil;
 
 @implementation AgoraEnum
 + (void)loadEnums {
@@ -191,5 +194,22 @@ NSDictionary *AgoraAudioRecordingQualityDic = nil;
                                      @"AgoraAudioRecordingQualityMedium": @(AgoraAudioRecordingQualityMedium),
                                      @"AgoraAudioRecordingQualityHigh": @(AgoraAudioRecordingQualityHigh),};
   
+  AgoraClientRoleDic = @{ @"AgoraClientRoleBroadcaster": @(AgoraClientRoleBroadcaster),
+                          @"AgoraClientRoleAudience": @(AgoraClientRoleAudience),
+                          };
+  
+  AgoraAudioSessionOperationRestrictionDic =
+  @{@"AgoraAudioSessionOperationRestrictionNone": @(AgoraAudioSessionOperationRestrictionNone),
+    @"AgoraAudioSessionOperationRestrictionAll": @(AgoraAudioSessionOperationRestrictionAll),
+    @"AgoraAudioSessionOperationRestrictionSetCategory": @(AgoraAudioSessionOperationRestrictionSetCategory),
+    @"AgoraAudioSessionOperationRestrictionConfigureSession": @(AgoraAudioSessionOperationRestrictionConfigureSession),
+    @"AgoraAudioSessionOperationRestrictionDeactivateSession": @(AgoraAudioSessionOperationRestrictionDeactivateSession),
+                          };
+  
+  AgoraStreamFallbackOptionsDic =
+  @{@"AgoraStreamFallbackOptionDisabled": @(AgoraStreamFallbackOptionDisabled),
+    @"AgoraStreamFallbackOptionVideoStreamLow": @(AgoraStreamFallbackOptionVideoStreamLow),
+    @"AgoraStreamFallbackOptionAudioOnly": @(AgoraStreamFallbackOptionAudioOnly),
+    };
 }
 @end

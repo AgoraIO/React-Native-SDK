@@ -13,10 +13,12 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.WritableArray;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.facebook.react.uimanager.UIImplementation;
+import com.google.gson.Gson;
+
+import org.json.JSONException;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationTargetException;
@@ -27,8 +29,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
+import io.agora.rtc.live.LiveTranscoding;
 import io.agora.rtc.video.VideoCanvas;
 
+import static com.rnapi.ConvertUtils.convertMapToJson;
 import static io.agora.rtc.Constants.AUDIO_EQUALIZATION_BAND_125;
 import static io.agora.rtc.Constants.AUDIO_EQUALIZATION_BAND_16K;
 import static io.agora.rtc.Constants.AUDIO_EQUALIZATION_BAND_1K;
@@ -618,14 +622,6 @@ public class AgoraModule extends ReactContextBaseJavaModule {
             }
 
             @Override
-            public void onRefreshRecordingServiceStatus(int status) {
-                WritableMap map = Arguments.createMap();
-                map.putInt("status", status);
-                mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("DidRefreshRecordingServiceStatus", map);
-            }
-
-            @Override
             public void onStreamMessage(int uid, int streamId, byte[] data) {
                 WritableMap map = Arguments.createMap();
                 map.putInt("uid", uid);
@@ -1168,6 +1164,27 @@ public class AgoraModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void getSdkVersion(Callback callback) {
         callback.invoke(mRtcEngine.getSdkVersion());
+    }
+
+    @ReactMethod
+    public void addPublishStreamUrl(String url, boolean transcodingEnabled) {
+        mRtcEngine.addPublishStreamUrl(url, transcodingEnabled);
+    }
+
+    @ReactMethod
+    public void removePublishStreamUrl(String url) {
+        mRtcEngine.removePublishStreamUrl(url);
+    }
+
+    @ReactMethod
+    public void setLiveTranscoding(ReadableMap map) {
+        try {
+            Gson gson = new Gson();
+            LiveTranscoding transcoding = gson.fromJson(convertMapToJson(map).toString(), LiveTranscoding.class);
+            mRtcEngine.setLiveTranscoding(transcoding);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @ReactMethod

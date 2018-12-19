@@ -27,17 +27,43 @@ var isSpeakerPhone = false;
 var cdn_url = "YOUR_CDN_URL"
 
 export default class App extends Component {
-  
-// Agora Action 
+  state = {
+    localStream: null,
+    remoteStreams: []
+  }
+  viewRegistry = {}
+  listeners = []
+
+  componentDidMount() {
+    this.registerCallbacks();
+    AgoraRtcEngine.createEngine("YOUR_APP_ID");
+
+    AgoraRtcEngine.enableVideo();
+    AgoraRtcEngine.enableAudio();
+    AgoraRtcEngine.setVideoProfileDetail(360, 640, 15, 300);
+  }
+
+  componentDidUpdate() {
+    //the view registry could be changed after render update
+    //resetup remote views here
+    let remoteStreams = this.state.remoteStreams || [];
+    for (let i = 0; i < remoteStreams.length; i++) {
+      let stream = remoteStreams[i];
+      let { uid } = stream;
+      AgoraRtcEngine.setRemoteVideoView(this.viewRegistry[uid], uid, AgoraRtcEngine.AgoraVideoRenderModeFit)
+    }
+  }
+
+  // Agora Action 
   _joinChannel() {
-    AgoraRtcEngine.setLocalVideoView(this._localView, AgoraRtcEngine.AgoraVideoRenderModeFit);
+    AgoraRtcEngine.setLocalVideoView(this.viewRegistry["local"], AgoraRtcEngine.AgoraVideoRenderModeFit);
     AgoraRtcEngine.setChannelProfile(1);
     AgoraRtcEngine.setClientRole(1);
     AgoraRtcEngine.setVideoProfile(AgoraRtcEngine.AgoraVideoProfileDEFAULT, true);
     AgoraRtcEngine.startPreview();
     AgoraRtcEngine.joinChannel(null, "rnchannel01", "React Native for Agora RTC SDK", 0);
   }
-  
+
   _leaveChannel() {
     AgoraRtcEngine.stopPreview();
     AgoraRtcEngine.leaveChannel();
@@ -51,7 +77,7 @@ export default class App extends Component {
     AgoraRtcEngine.setEnableSpeakerphone(isSpeakerPhone);
     isSpeakerPhone = !isSpeakerPhone;
   }
-  
+
   _startPublish() {
     AgoraRtcEngine.addPublishStreamUrl(cdn_url, false)
   }
@@ -61,43 +87,40 @@ export default class App extends Component {
   }
 
   render() {
-    
-    AgoraRtcEngine.createEngine("YOUR_APP_ID");
-
-    AgoraRtcEngine.enableVideo();
-    AgoraRtcEngine.enableAudio();
-    AgoraRtcEngine.setVideoProfileDetail(360, 640, 15, 300);
-    AgoraRtcEngine.setChannelProfile(AgoraRtcEngine.AgoraChannelProfileCommunication);
-    
+    let remoteViews = this.state.remoteStreams.map(stream => {
+      let { uid } = stream;
+      return (
+        <AgoraRendererView
+          ref={component => this.viewRegistry[uid] = component}
+          key={uid}
+          style={{ width: 360, height: 240 }}
+        />
+      )
+    })
     return (
-    <View style = {styles.container} >
-      
-      <AgoraRendererView 
-        ref={component => this._localView = component}
-        style = {{width: 360, height: 240}}
-      />
+      <View style={styles.container} >
 
-      <AgoraRendererView
-        ref={component => this._remoteView = component}
-        style = {{width: 360, height: 240}}
-      />
-
-      <View style={{flexDirection: 'row'}}>
-          <Button style = {{flex: 1}}
+        <AgoraRendererView key="local"
+          ref={component => this.viewRegistry["local"] = component}
+          style={{ width: 360, height: 240 }}
+        />
+        {remoteViews}
+        <View style={{ flexDirection: 'row' }}>
+          <Button style={{ flex: 1 }}
             onPress={this._joinChannel.bind(this)}
             title="Join Channel"
-            style={{width:180, float:"left", backgroundColor:"rgb(0,0,0)"}}
+            style={{ width: 180, float: "left", backgroundColor: "rgb(0,0,0)" }}
             color="#841584"
           />
-          <Button style = {{flex: 1}}
+          <Button style={{ flex: 1 }}
             onPress={this._leaveChannel.bind(this)}
             title="Leave Channel"
             color="#841584"
-            style={{width:180, float:"left"}}
+            style={{ width: 180, float: "left" }}
           />
-      </View>
+        </View>
 
-      <View style={{flexDirection: 'row'}}>
+        <View style={{ flexDirection: 'row' }}>
           <Button
             onPress={this._switchCamera.bind(this)}
             title="Switch Camera"
@@ -108,9 +131,9 @@ export default class App extends Component {
             title="Switch Audio Route"
             color="#841584"
           />
-      </View>
+        </View>
 
-      <View style={{flexDirection: 'row'}}>
+        <View style={{ flexDirection: 'row' }}>
           <Button
             onPress={this._startPublish.bind(this)}
             title="Start publish"
@@ -121,39 +144,54 @@ export default class App extends Component {
             title="Stop publish"
             color="#841584"
           />
-      </View>
+        </View>
 
-    </View>
+      </View>
     );
   }
 
-  // Aogra CallBack
-  remoteDidJoineChannelNoti = agoraKitEmitter.addListener(
-    'RemoteDidJoinedChannel',
-    (notify) => {
-      AgoraRtcEngine.setRemoteVideoView(this._remoteView, notify.uid, AgoraRtcEngine.AgoraVideoRenderModeFit);
-    }
-  );
+  registerCallbacks() {
+    let listeners = this.listeners || [];
+    // Aogra CallBack
+    listeners.push(agoraKitEmitter.addListener(
+      'RemoteDidJoinedChannel',
+      (notify) => {
+        //update state
+        let remoteStreams = this.state.remoteStreams || [];
+        remoteStreams.push({ uid: notify.uid })
+        this.setState({ remoteStreams })
+      }
+    ));
 
-  addPublishStreamUrlNoti = agoraKitEmitter.addListener(
-    'StreamPublished',
-    (notify) => {
-      console.log(`stream published ${notify.errorCode}`)
-    }
-  );
+    listeners.push(agoraKitEmitter.addListener(
+      'RemoteDidOfflineOfUid',
+      (notify) => {
+        //remove stream and update state
+        let remoteStreams = this.state.remoteStreams || [];
+        remoteStreams = remoteStreams.filter(s => s.uid !== notify.uid)
+        this.setState({ remoteStreams })
+      }
+    ));
 
-  removePublishStreamUrlNoti = agoraKitEmitter.addListener(
-    'StreamUnpublished',
-    (notify) => {
-      console.log(`stream unpublished`)
-    }
-  );
+    listeners.push(agoraKitEmitter.addListener(
+      'StreamPublished',
+      (notify) => {
+        console.log(`stream published ${notify.errorCode}`)
+      }
+    ));
+
+    listeners.push(agoraKitEmitter.addListener(
+      'StreamUnpublished',
+      (notify) => {
+        console.log(`stream unpublished`)
+      }
+    ));
+  }
 
   componentWillUnmount() {
-    remoteDidJoineChannelNoti.remove()
-    addPublishStreamUrlNoti.remove()
+    this.listeners.forEach(i => i.remove())
   }
-  
+
 }
 
 const styles = StyleSheet.create({

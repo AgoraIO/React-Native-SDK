@@ -1188,8 +1188,8 @@ public class AgoraModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void setClientRole(int role, Callback callback) {
-        callback.invoke(mRtcEngine.setClientRole(role));
+    public void setClientRole(int role) {
+        mRtcEngine.setClientRole(role);
     }
 
     @ReactMethod

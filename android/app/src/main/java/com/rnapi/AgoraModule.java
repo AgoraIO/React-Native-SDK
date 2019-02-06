@@ -19,10 +19,12 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,6 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
 import io.agora.rtc.live.LiveTranscoding;
+import io.agora.rtc.video.AgoraImage;
 import io.agora.rtc.video.VideoCanvas;
 
 import static com.rnapi.ConvertUtils.convertMapToJson;
@@ -1178,13 +1181,46 @@ public class AgoraModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setLiveTranscoding(ReadableMap map) {
-        try {
-            Gson gson = new Gson();
-            LiveTranscoding transcoding = gson.fromJson(convertMapToJson(map).toString(), LiveTranscoding.class);
-            mRtcEngine.setLiveTranscoding(transcoding);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        LiveTranscoding transcoding = new LiveTranscoding();
+        transcoding.videoCodecProfile = this.getVideoCodecProfile(map.getInt("videoCodecProfile"));
+        transcoding.videoGop = map.getInt("videoGop");
+        transcoding.videoFramerate = map.getInt("videoFramerate");
+        transcoding.videoBitrate = map.getInt("videoBitrate");
+        transcoding.width = map.getMap("size").getInt("width");
+        transcoding.height = map.getMap("size").getInt("height");
+        transcoding.lowLatency = map.getBoolean("lowLatency");
+        transcoding.audioBitrate = map.getInt("audioBitrate");
+        transcoding.audioChannels = map.getInt("audioChannels");
+        transcoding.audioSampleRate = this.getAudioSampleRateType(map.getInt("audioSampleRate"));
+        transcoding.setBackgroundColor(map.getInt("backgroundColor"));
+        ReadableMap waterImageData = map.getMap("waterImage");
+        if(waterImageData != null) {
+            AgoraImage image = new AgoraImage();
+            image.url = waterImageData.getString("url");
+            ReadableMap rect = waterImageData.getMap("rect");
+            image.x = rect.getInt("x");
+            image.y = rect.getInt("y");
+            image.width = rect.getInt("width");
+            image.height = rect.getInt("height");
+            transcoding.watermark = image;
         }
+        ReadableArray users = map.getArray("transcodingUsers");
+        for(int i = 0; i < users.size(); i++) {
+            ReadableMap userMap = users.getMap(i);
+            LiveTranscoding.TranscodingUser user = new LiveTranscoding.TranscodingUser();
+            user.uid = userMap.getInt("uid");
+            user.zOrder = userMap.getInt("zOrder");
+            user.alpha = (float)userMap.getDouble("alpha");
+            user.audioChannel = userMap.getInt("audioChannel");
+            ReadableMap rect = userMap.getMap("rect");
+            user.x = rect.getInt("x");
+            user.y = rect.getInt("y");
+            user.width = rect.getInt("width");
+            user.height = rect.getInt("height");
+            transcoding.addUser(user);
+        }
+
+        mRtcEngine.setLiveTranscoding(transcoding);
     }
 
     @ReactMethod
@@ -1235,6 +1271,26 @@ public class AgoraModule extends ReactContextBaseJavaModule {
             return;
 
         mRtcEngine.setupRemoteVideo(new VideoCanvas(view, renderMode, uid));
+    }
+
+    private LiveTranscoding.VideoCodecProfileType getVideoCodecProfile(int value) {
+        LiveTranscoding.VideoCodecProfileType[] profiles = LiveTranscoding.VideoCodecProfileType.values();
+        for(LiveTranscoding.VideoCodecProfileType profile : profiles) {
+            if(LiveTranscoding.VideoCodecProfileType.getValue(profile) == value){
+                return profile;
+            }
+        }
+        return LiveTranscoding.VideoCodecProfileType.BASELINE;
+    }
+
+    private LiveTranscoding.AudioSampleRateType getAudioSampleRateType(int value) {
+        LiveTranscoding.AudioSampleRateType[] rates = LiveTranscoding.AudioSampleRateType.values();
+        for(LiveTranscoding.AudioSampleRateType rate : rates) {
+            if(LiveTranscoding.AudioSampleRateType.getValue(rate) == value){
+                return rate;
+            }
+        }
+        return LiveTranscoding.AudioSampleRateType.TYPE_44100;
     }
 
     private void initPublicAPI() {

@@ -1193,7 +1193,7 @@ public class AgoraModule extends ReactContextBaseJavaModule {
         transcoding.audioChannels = map.getInt("audioChannels");
         transcoding.audioSampleRate = this.getAudioSampleRateType(map.getInt("audioSampleRate"));
         transcoding.setBackgroundColor(map.getInt("backgroundColor"));
-        ReadableMap waterImageData = map.getMap("waterImage");
+        ReadableMap waterImageData = map.getMap("watermark");
         if(waterImageData != null) {
             AgoraImage image = new AgoraImage();
             image.url = waterImageData.getString("url");

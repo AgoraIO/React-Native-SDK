@@ -1,6 +1,6 @@
 # Agora RTC SDK for React Native (Beta)
 
-*Read this in other languages: [Chinese](README.zh.md)*
+*Read this in other languages: [中文](README.zh.md)*
 
 **There's another React Native Repo for Agora SDK maintained by community developers which you can find [here](https://github.com/syanbo/react-native-agora)**
 

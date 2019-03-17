@@ -1,4 +1,4 @@
-# Agora-RTC-SDK-for-React-Native
+# Agora-RTC-SDK-for-React-Native(计划废弃)
 
 *其他语言：[English](README.md)*
 

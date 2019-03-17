@@ -2,6 +2,8 @@
 
 *其他语言：[English](README.md)*
 
+**本仓库已计划废弃，请在[这里](https://github.com/AgoraIO-Community/Agora-RN-Quickstart)参阅最新的示例代码。最新的示例代码主要使用了开源社区维护的[仓库](https://github.com/syanbo/react-native-agora)，且该版本支持了npm以及最新的RN集成方式，以后我们会与开源社区持续一起维护新的RN SDK。**
+
 这个开源示例项目是 Agora 视频通话 SDK 对于 **[React Native](https://facebook.github.io/react-native/)** 的封装实现。
 
 在这个开源项目包含了封装代码以及一个简单的示例程序，示例程序包含了以下功能：

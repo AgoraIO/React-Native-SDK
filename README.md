@@ -1,8 +1,10 @@
-# Agora RTC SDK for React Native (Beta)
+# Agora RTC SDK for React Native (Deprecated)
+**Please refer to [here](https://github.com/AgoraIO-Community/Agora-RN-Quickstart) for a new QuickStart. This repo is about to be deprecated. The new one has NPM support and is more suited to latest React Native development.**
 
 *Read this in other languages: [中文](README.zh.md)*
 
 **There's another React Native Repo for Agora SDK maintained by community developers which you can find [here](https://github.com/syanbo/react-native-agora)**
+
 
 This tutorial shows you how to quickly start developing requests with the Agora RTC SDK for [React Native](https://facebook.github.io/react-native/) wrapper for [Android](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_android_audio?platform=Android)/[iOS](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_ios_audio?platform=iOS).
 
